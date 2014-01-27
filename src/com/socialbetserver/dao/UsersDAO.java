@@ -20,8 +20,8 @@ public class UsersDAO extends ADAO<UsersModel> {
                     .prepareStatement(
                             "INSERT INTO users (login, password) VALUES(?, ?)"
                     );
-            prepare.setString(1, obj.getLogin());
-            prepare.setString(2, obj.getPassword());
+            prepare.setString(1, obj.getLogin_());
+            prepare.setString(2, obj.getPassword_());
             prepare.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -45,7 +45,10 @@ public class UsersDAO extends ADAO<UsersModel> {
                         id,
                         result.getString("name"),
                         result.getString("encrypted_password"),
-                        result.getInt("rank")
+                        result.getInt("rank"),
+                        result.getInt("points"),
+                        result.getInt("real_points"),
+                        result.getString("image")
                 );
 
         } catch (SQLException e) {
@@ -70,7 +73,10 @@ public class UsersDAO extends ADAO<UsersModel> {
                         result.getInt("id"),
                         result.getString("name"),
                         result.getString("encrypted_password"),
-                        result.getInt("rank")
+                        result.getInt("rank"),
+                        result.getInt("points"),
+                        result.getInt("real_points"),
+                        result.getString("image")
                 );
 
         } catch (SQLException e) {
@@ -86,8 +92,8 @@ public class UsersDAO extends ADAO<UsersModel> {
                     .prepareStatement(
                             "UPDATE users SET login=? AND password=? WHERE id=?"
                     );
-            prepare.setString(1, obj.getLogin());
-            prepare.setString(2, obj.getPassword());
+            prepare.setString(1, obj.getLogin_());
+            prepare.setString(2, obj.getPassword_());
             prepare.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -102,7 +108,7 @@ public class UsersDAO extends ADAO<UsersModel> {
                     .prepareStatement(
                             "DELETE FROM users WHERE id=?"
                     );
-            prepare.setInt(1, obj.getId());
+            prepare.setInt(1, obj.getId_());
             prepare.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

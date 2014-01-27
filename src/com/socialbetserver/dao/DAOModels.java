@@ -10,8 +10,13 @@ import com.socialbetserver.model.*;
 
 public class DAOModels {
     private ADAO<UsersModel> usersDAO = new UsersDAO();
+    private ADAO<PronosticsModel> pronosticsDAO = new PronosticsDAO();
 
     public ADAO<UsersModel> getUsersDAO() {
         return usersDAO;
+    }
+
+    public ADAO<PronosticsModel> getPronosticsDAO() {
+        return pronosticsDAO;
     }
 }

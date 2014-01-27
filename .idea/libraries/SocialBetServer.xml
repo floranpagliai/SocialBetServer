@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="SocialBetServer">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/postgresql.jdbc4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mysql-connector-java-5.1.27-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

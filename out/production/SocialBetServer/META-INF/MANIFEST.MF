@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: postgresql.jdbc4.jar mysql-connector-java-5.1.27-bin.jar p
+ ostgresql.jdbc4.jar
+Main-Class: com.socialbetserver.Server
+

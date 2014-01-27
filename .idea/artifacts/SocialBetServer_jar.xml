@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="SocialBetServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SocialBetServer_jar</output-path>
+    <root id="root">
+      <element id="archive" name="SocialBetServer.jar">
+        <element id="module-output" name="SocialBetServer" />
+      </element>
+      <element id="library" level="project" name="SocialBetServer" />
+      <element id="file-copy" path="$PROJECT_DIR$/postgresql.jdbc4.jar" />
+    </root>
+  </artifact>
+</component>

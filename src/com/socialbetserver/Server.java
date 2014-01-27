@@ -21,7 +21,7 @@ public class Server {
         Server serveur = new Server();
         DAOModels daoModels = new DAOModels();
         try {
-            Integer port = 4242;
+            Integer port = 4243;
             ServerSocket ss = new ServerSocket(port.intValue());
             while (true) {
                 new Jclient(ss.accept(), daoModels, serveur);

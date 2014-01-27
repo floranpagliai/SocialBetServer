@@ -73,6 +73,8 @@ public class Jclient implements Runnable {
     private void commands(String tokenCmds[]) {
         if (tokenCmds[0].equalsIgnoreCase("getranked") && tokenCmds.length == 2)
             out_.println(getRanked(tokenCmds[1]));
+        else if (tokenCmds[0].equalsIgnoreCase("getprofile") && tokenCmds.length == 2)
+            out_.println(getProfile(tokenCmds[1]));
         else
             out_.println("error");
     }
@@ -88,6 +90,15 @@ public class Jclient implements Runnable {
         for (Integer i = 1 ; i <= size ; i++) {
             ret += daoModels_.getUsersDAO().findByKey("rank", i.toString()).toString();
         }
+        return ret;
+    }
+
+    private String getProfile(String id) {
+        String ret = "";
+        if (!daoModels_.getUsersDAO().find(Integer.parseInt(id)).isNull())
+            ret = daoModels_.getUsersDAO().find(Integer.parseInt(id)).toString();
+        else
+            ret = "error";
         return ret;
     }
 }
